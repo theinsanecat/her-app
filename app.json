@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "HER",
+    "slug": "her",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "her",
+    "userInterfaceStyle": "automatic",
+    "ios": {},
+    "android": {
+      "package": "com.theinsanecat.her",
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-dev-client",
+        {
+          "android": {
+            "launchMode": "most-recent",
+            "toolsButton": false,
+            "skipOnboarding": true,
+            "showMenuAtLaunch": false
+          }
+        }
+      ],
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "android": {
+            "image": "./assets/images/splash-icon.png",
+            "imageWidth": 76
+          }
+        }
+      ],
+      "expo-secure-store",
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

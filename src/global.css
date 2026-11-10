@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@import 'uniwind';
+@import 'heroui-native/styles';
+
+/* Let Tailwind's scanner see HeroUI Native's compiled classNames. */
+@source '../node_modules/heroui-native/lib';
+
+/* ════════════════════════════════════════════════════════════════════════════
+ * APP DESIGN TOKENS — the locked visual identity for THIS app.
+ *
+ * Owned by the design system: the infer/plan step writes this block and the
+ * refine path ("warmer", "more playful") edits it. Components consume these
+ * through token utilities (bg-accent, text-foreground, rounded-2xl, …) — they
+ * must NEVER hard-code hex or magic numbers. To restyle the whole app, edit the
+ * tokens here and let components re-snap; do not hand-patch individual screens.
+ *
+ * These override HeroUI Native's defaults (loaded just above), so only declare
+ * what differs. See design/dials.json for variance / motion / density and
+ * design/DESIGN.md for the identity this encodes.
+ * ════════════════════════════════════════════════════════════════════════════ */
+
+/* Design tokens — HER: blush atelier. See design/DESIGN.md. */
+@layer theme {
+  :root {
+    @variant light {
+      --background: #fceaf1;
+      --foreground: #684568;
+      --surface: oklch(0.993 0.006 345 / 0.82);
+      --surface-foreground: #684568;
+      --surface-secondary: #f9dce8;
+      --surface-secondary-foreground: #684568;
+      --surface-tertiary: #e8dff8;
+      --surface-tertiary-foreground: #684568;
+      --overlay: #fff9fc;
+      --overlay-foreground: #684568;
+      --muted: #7e5a7a;
+      --default: #f9dce8;
+      --default-foreground: #684568;
+      --accent: #684568;
+      --accent-foreground: #ffffff;
+      --field-background: #fff9fc;
+      --field-foreground: #684568;
+      --field-placeholder: #9a7896;
+      --border: #f3d3e1;
+      --separator: #e9c3d5;
+      --success: #8a6fc4;
+      --success-foreground: #ffffff;
+      --danger: #b4436c;
+      --danger-foreground: #ffffff;
+      --segment: #fff9fc;
+      --segment-foreground: #684568;
+    }
+    @variant dark {
+      --background: #fceaf1;
+      --foreground: #684568;
+      --surface: oklch(0.993 0.006 345 / 0.82);
+      --surface-foreground: #684568;
+      --surface-secondary: #f9dce8;
+      --surface-secondary-foreground: #684568;
+      --surface-tertiary: #e8dff8;
+      --surface-tertiary-foreground: #684568;
+      --overlay: #fff9fc;
+      --overlay-foreground: #684568;
+      --muted: #7e5a7a;
+      --default: #f9dce8;
+      --default-foreground: #684568;
+      --accent: #684568;
+      --accent-foreground: #ffffff;
+      --field-background: #fff9fc;
+      --field-foreground: #684568;
+      --field-placeholder: #9a7896;
+      --border: #f3d3e1;
+      --separator: #e9c3d5;
+      --success: #8a6fc4;
+      --success-foreground: #ffffff;
+      --danger: #b4436c;
+      --danger-foreground: #ffffff;
+      --segment: #fff9fc;
+      --segment-foreground: #684568;
+    }
+  }
+}
+
+@theme {
+  --radius: 1rem;
+  --color-blush: #f4b8ce;
+  --color-petal: #f9dce8;
+  --color-baby: #fceaf1;
+  --color-rose: #d98ead;
+  --color-lavender: #c8b9ea;
+  --color-lilac: #e8dff8;
+  --color-plum: #684568;
+  --color-ivory: #fff9fc;
+  --font-heading: 'Fraunces_600SemiBold';
+  --font-heading-medium: 'Fraunces_500Medium';
+  --font-heading-italic: 'Fraunces_400Regular_Italic';
+}
+/* End of design tokens */
+
+/* Web-only display fonts (native uses the system font stack: SF Pro / Roboto). */
+:root {
+  --font-display:
+    Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
