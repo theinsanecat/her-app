@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/utils";
 
 export function SiteFooter() {
   return (
@@ -6,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-sm space-y-3">
           <div className="flex items-center gap-2.5">
-            <img src="/app-icon.png" alt="" className="h-8 w-8 rounded-full" />
+            <img src={asset("/app-icon.png")} alt="" className="h-8 w-8 rounded-full" />
             <span className="font-display text-lg font-semibold">HER</span>
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">

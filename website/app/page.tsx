@@ -1,29 +1,30 @@
 import Link from "next/link";
+import { asset } from "@/lib/utils";
 
 const pillars = [
   {
-    orb: "/img/orb-checkin.jpg",
+    orb: asset("/img/orb-checkin.jpg"),
     kicker: "Whole-body logging",
     title: "Your whole body, not just your cycle.",
     body: "A one-minute check-in for energy, mood, sleep and stress. Log symptoms from head to toe, with severity, duration and where it hurts. Periods sit alongside everything else instead of standing in for it.",
     tags: ["Energy", "Mood", "Sleep", "Stress", "Symptoms", "Cycle"],
   },
   {
-    orb: "/img/orb-insights.jpg",
+    orb: asset("/img/orb-insights.jpg"),
     kicker: "Connect the dots",
     title: "Patterns from your entries, and nothing more.",
     body: "HER looks across your own logs for things that tend to show up together, and tells you how many entries each observation rests on. When there isn't enough to go on, it says so plainly. It never invents a link, and it never pins a symptom on a hormone.",
     tags: ["Based on your entries", "Says what it can't conclude"],
   },
   {
-    orb: "/img/orb-doctor.jpg",
+    orb: asset("/img/orb-doctor.jpg"),
     kicker: "Doctor Mode",
     title: "Walk in with a clear history.",
     body: "Turn weeks of notes into a calm, readable summary of your symptoms, cycle and medications for your next appointment, so the ten minutes you get are spent on you, not on trying to remember.",
     tags: ["Symptom timeline", "Cycle summary", "Medications"],
   },
   {
-    orb: "/img/orb-understand.jpg",
+    orb: asset("/img/orb-understand.jpg"),
     kicker: "Knowledge",
     title: "Gentle context, clearly labelled.",
     body: "Short, plain-language reads on cycles, sleep, gut health, migraines and more, with questions you might bring to a clinician. Each piece is labelled as general information, not medical advice.",
@@ -32,17 +33,17 @@ const pillars = [
 ];
 
 const walkthrough = [
-  { orb: "/img/orb-cycle.jpg", title: "Tell HER about you", body: "A gentle setup: your name, your cycle if you track one, and what you'd like to keep an eye on. Skip anything you like." },
-  { orb: "/img/orb-checkin.jpg", title: "Check in each day", body: "One quiet minute for energy, mood, sleep and stress. Your five petals bloom as you answer." },
-  { orb: "/img/orb-physical.jpg", title: "Log what you feel", body: "Add a symptom whenever it shows up, with how strong it was, how long it lasted and where." },
-  { orb: "/img/orb-doctor.jpg", title: "See what your entries show", body: "Connect the Dots shows what your entries support. Doctor Mode turns them into a clear summary for your appointment." },
+  { orb: asset("/img/orb-cycle.jpg"), title: "Tell HER about you", body: "A gentle setup: your name, your cycle if you track one, and what you'd like to keep an eye on. Skip anything you like." },
+  { orb: asset("/img/orb-checkin.jpg"), title: "Check in each day", body: "One quiet minute for energy, mood, sleep and stress. Your five petals bloom as you answer." },
+  { orb: asset("/img/orb-physical.jpg"), title: "Log what you feel", body: "Add a symptom whenever it shows up, with how strong it was, how long it lasted and where." },
+  { orb: asset("/img/orb-doctor.jpg"), title: "See what your entries show", body: "Connect the Dots shows what your entries support. Doctor Mode turns them into a clear summary for your appointment." },
 ];
 
 const floating = [
-  { src: "/img/orb-menstrual.jpg", cls: "left-[6%] top-[22%] h-20 w-20 sm:h-28 sm:w-28", delay: "0s" },
-  { src: "/img/orb-mind.jpg", cls: "right-[7%] top-[18%] h-16 w-16 sm:h-24 sm:w-24", delay: "1.5s" },
-  { src: "/img/orb-physical.jpg", cls: "left-[12%] bottom-[14%] h-14 w-14 sm:h-20 sm:w-20", delay: "3s" },
-  { src: "/img/orb-lifestyle.jpg", cls: "right-[12%] bottom-[18%] h-20 w-20 sm:h-28 sm:w-28", delay: "2.2s" },
+  { src: asset("/img/orb-menstrual.jpg"), cls: "left-[6%] top-[22%] h-20 w-20 sm:h-28 sm:w-28", delay: "0s" },
+  { src: asset("/img/orb-mind.jpg"), cls: "right-[7%] top-[18%] h-16 w-16 sm:h-24 sm:w-24", delay: "1.5s" },
+  { src: asset("/img/orb-physical.jpg"), cls: "left-[12%] bottom-[14%] h-14 w-14 sm:h-20 sm:w-20", delay: "3s" },
+  { src: asset("/img/orb-lifestyle.jpg"), cls: "right-[12%] bottom-[18%] h-20 w-20 sm:h-28 sm:w-28", delay: "2.2s" },
 ];
 
 export default function Home() {
@@ -50,14 +51,14 @@ export default function Home() {
     <main className="overflow-hidden">
       {/* Hero: the cloud sky the app opens on */}
       <section className="relative isolate flex min-h-[100svh] items-center justify-center px-6 pb-24 pt-32">
-        <img src="/img/sky.jpg" alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" />
+        <img src={asset("/img/sky.jpg")} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/20 via-background/40 to-background" />
         {floating.map((o) => (
           <img key={o.src} src={o.src} alt="" aria-hidden className={`orb animate-float absolute hidden md:block ${o.cls}`} style={{ animationDelay: o.delay }} />
         ))}
 
         <div className="mx-auto max-w-3xl text-center">
-          <img src="/img/orb-cycle.jpg" alt="" className="orb animate-rise mx-auto mb-8 h-28 w-28 sm:h-32 sm:w-32" />
+          <img src={asset("/img/orb-cycle.jpg")} alt="" className="orb animate-rise mx-auto mb-8 h-28 w-28 sm:h-32 sm:w-32" />
           <p className="animate-rise mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground" style={{ animationDelay: "0.08s" }}>
             HER · Women&apos;s Health Intelligence
           </p>
@@ -153,7 +154,7 @@ export default function Home() {
       {/* Privacy */}
       <section id="privacy" className="scroll-mt-28 px-6 py-20">
         <div className="mx-auto max-w-4xl rounded-[2.5rem] bg-primary px-8 py-14 text-center text-primary-foreground sm:px-16">
-          <img src="/img/orb-privacy.jpg" alt="" className="orb mx-auto mb-8 h-24 w-24" />
+          <img src={asset("/img/orb-privacy.jpg")} alt="" className="orb mx-auto mb-8 h-24 w-24" />
           <h2 className="font-display text-4xl font-medium leading-tight sm:text-5xl">
             Your body. Your phone. <em className="italic">Your data.</em>
           </h2>
@@ -169,7 +170,7 @@ export default function Home() {
       {/* Disclaimer */}
       <section className="px-6 pb-24 pt-4">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-          <img src="/img/orb-empty.jpg" alt="" className="orb h-16 w-16" />
+          <img src={asset("/img/orb-empty.jpg")} alt="" className="orb h-16 w-16" />
           <p className="font-display text-2xl italic">A companion, not a clinician.</p>
           <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
             HER helps you notice and describe what you&apos;re experiencing. It doesn&apos;t diagnose conditions, recommend hormone treatments or replace medical care. In an emergency, contact your local emergency services.

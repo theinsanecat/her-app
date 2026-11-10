@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { asset } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Privacy & terms" };
 
@@ -47,9 +48,9 @@ const sections: { h: string; p: string[] }[] = [
 export default function PrivacyPage() {
   return (
     <main className="relative isolate px-6 pb-24 pt-36">
-      <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-[url('/img/sky.jpg')] bg-cover bg-center opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-96 bg-cover bg-center opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent)]" style={{ backgroundImage: `url(${asset("/img/sky.jpg")})` }} />
       <article className="glass mx-auto max-w-3xl rounded-[2.5rem] p-8 sm:p-14">
-        <img src="/img/orb-privacy.jpg" alt="" className="orb mb-8 h-20 w-20" />
+        <img src={asset("/img/orb-privacy.jpg")} alt="" className="orb mb-8 h-20 w-20" />
         <h1 className="font-display text-4xl font-medium sm:text-5xl">Privacy &amp; terms</h1>
         <p className="mt-4 text-sm text-muted-foreground">Last updated 6 November 2026</p>
         <p className="mt-8 text-lg leading-relaxed">
